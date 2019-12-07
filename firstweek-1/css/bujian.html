@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, initia-scale=1.0">
+	<style>
+		.Container {
+			width: 100px;
+			height: 100px;
+			background: url(./liebao.jpg) no-repeat;
+			background-position: center;
+			animation: run 1s infinite;
+			animation-timing-function: steps(1);
+		}
+
+		@keyframes run {
+			0% {
+				background-position: 0 0;
+			}
+
+			12.5% {
+				background-position: -100px 0;
+			}
+
+			25% {
+				background-position: -200px 0;
+			}
+
+			37.5% {
+				background-position: 0 -100px;
+			}
+
+			50% {
+				background-position: 0 -100px;
+			}
+
+			62.5% {
+				background-position: -100px -100px;
+			}
+
+			75% {
+				background-position: -200px -100px;
+			}
+
+			87.5% {
+				background-position: -300px -100px;
+			}
+
+			100% {
+				background-position: 0 0;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div class="Container">
+
+	</div>
+
+
+</body>
+
+</html>

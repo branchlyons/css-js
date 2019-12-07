@@ -1,0 +1,31 @@
+@fontsize: 12px;
+@bgColor : red;
+
+.block {
+    font-size    : @fontsize;
+    border       : 1px solid #ccc;
+    border-radius: 4 px;
+}
+
+body {
+    padding: 0;
+    margin : 0;
+}
+
+.wrapper {
+    background: lighten(@bgColor, 40%);
+
+    .nav {
+        &:extend(.block);
+        color: #333333;
+    }
+
+    .content {
+        &:extend(.block);
+
+        &:hover {
+            background: red;
+        }
+
+    }
+}
