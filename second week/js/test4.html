@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="div1">
+        <a href="https://www.youtube.com/?hl=zh-CN" id='link1'>youtube</a>
+        <a href="https://www.youtube.com/?hl=zh-CN" id='link1'>youtube</a>
+        <a href="https://www.youtube.com/?hl=zh-CN" id='link1'>youtube</a>
+        <a href="https://www.youtube.com/?hl=zh-CN" id='link1'>youtube</a>
+        <a href="https://www.youtube.com/?hl=zh-CN" id='link1'>youtube</a>
+        <p id="p1">jiahuo</p>
+        <p id="p2">quxiao</p>
+    </div>
+    <div id="div2">
+        <p id="p3"> quxiao</p>
+        <p id="p4"> quxiao</p>
+    </div>
+    <script type="text/javascript">
+
+        function bindEvent(elem, type, selector, fn) {
+            if (fn == null) {
+                fn = selector
+                selector = null
+            }
+            elem.addEventListener(type, function (e) {
+                var target
+                if (selector) {
+                    target = e.target
+                    if (target.matches(selector)) {
+                        fn.call(target, e)
+                    }
+                } else {
+                    fn(e)
+                }
+            })
+        }
+
+        var div1 = document.getElementById('div1')
+        bindEvent(div1, "click", 'a', function (e) {
+            e.preventDefault()
+            console.log(this.innerHTML)
+
+        })
+        var p1 = document.getElementById('p1')
+        bindEvent(p1, 'click', function (e) {
+            console.log(p1.innerHTML)
+        })
+
+
+
+
+
+
+
+        //事件绑定
+        // var link1 = document.getElementById('link1')
+        // bindEvent(link1, 'click', function (e) {
+        //     e.preventDefault()
+        //     console.log(123)
+        // })
+
+
+
+        //冒泡
+        // var p1 = document.getElementById('p1')
+        // var body = document.body
+        // bindEvent(p1, 'click', function (e) {
+        //     e.stopPropagation()
+        //     alert('jihuo')
+        // })
+        // bindEvent(body, 'click', function (e) {
+        //     alert('quxiao')
+        // })
+
+
+        //代理
+        // var div1 = document.getElementById('div1')
+        // bindEvent(div1, 'click', function (e) {
+        //     e.preventDefault()
+        //     var target = e.target
+        //     if (target.nodeName === 'A') {
+        //         console.log('clicked')
+        //     }
+
+        // })
+
+    </script>
+</body>
+
+</html>

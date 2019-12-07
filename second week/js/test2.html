@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+
+
+        // function time(dt) {
+        //     if(!dt){
+
+        //     dt = new Date()
+        //     }
+        // var year = dt.getFullYear()
+        // var month = dt.getMonth() + 1
+        // var date=dt.getDate()
+        //     if(month<10){
+        //         month='0'+month
+        //     }
+        //     if(date<10){
+        //         date='0'+date
+        //     }
+        //     return year+'-'+month+'-'+date
+        // }
+        // console.log(time(new Date()))
+
+
+        // function time(dt) {
+        //     dt = new Date()
+        //     var year = dt.getFullYear()
+        //     var month = dt.getMonth() + 1
+        //     var date = dt.getDate()
+        //     if (month < 10) {
+        //         month = '0' + month
+        //     }
+        //     if (date < 10) {
+        //         date = '0' + date
+        //     }
+        //     return year + '-' + month + '-' + date
+        // }
+        // dt=new Date()
+        // console.log(time(dt))
+
+
+
+        // var random=Math.random()
+        // var random = Math.random() + '0000000000'
+        // var random = random.slice(0, 10)
+        // console.log(random)
+
+        function foreach(obj, fn) {
+            if (obj instanceof Array) {
+                obj.forEach(function (item, index) {
+                    fn(index, item)
+                })
+            } else {
+                for (key in obj) {
+                    if(obj.hasOwnProperty(key)) {
+
+                        fn(key, obj[key])
+                    }
+                }
+            }
+        }
+        var arr = [1, 2, 3]
+        foreach(arr, function (x, y) {
+            console.log(x, y)
+        })
+        var obj = { x: 100, Y: 200 }
+        foreach(obj, function (key, value) {
+            console.log(key, value)
+        })
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
